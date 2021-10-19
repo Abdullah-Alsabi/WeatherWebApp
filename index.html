@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="main">
+      <!-- navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"
+            ><img
+              height="30vh"
+              width="30vw"
+              src="images/wether logo.png"
+              alt="logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home Page</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scrolSmotly" href="#aboutUs">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link scrolSmotly" href="#weatherSection"
+                  >Weather</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- header -->
+      <header class="container mt-3">
+        <img class="img-fluid" src="images/header-final.jpg" />
+        <hr />
+      </header>
+      <!-- back to top -->
+
+      <!-- about us -->
+      <div id="aboutUs" class="text-center container p-4 mt-2 mb-5">
+        <h1 class="display-1">About us</h1>
+        <div class="d-grid text-center">
+          <div class="g-col-6 p-3 m-2">
+            <h3 class="display-6">About developer</h3>
+            <p class="fs-6 text-start">
+              I’m a freash graduate from KSU and I developed this app as a
+              requirement for Tuwaiq camp.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://www.linkedin.com/in/abdullah-alsabi"
+              role="button"
+              ><i class="bi bi-linkedin"></i>
+            </a>
+            <a
+              class="btn btn-primary"
+              href="https://github.com/Abdullah-Alsabi"
+              role="button"
+              ><i class="bi-github" role="img" aria-label="GitHub"></i>
+            </a>
+          </div>
+
+          <div class="g-col-6 p-3 m-2">
+            <h3 class="display-6">About app</h3>
+            <p class="fs-6 text-start">
+              This applicatiin helps user to be updated about the weather. You
+              can add favorite cities to be more user friendly.
+            </p>
+            <a class="btn btn-primary" href="#container" role="button"
+              ><i class="bi bi-house-door"></i
+            ></a>
+          </div>
+
+          <div class="g-col-6 p-3 m-2">
+            <h3 class="display-6">About API</h3>
+            <p class="fs-6 text-start">
+              The OWM API is free on a basic plan and high-precision API. Their
+              weather database is huge. You can use diverse metrics (e.g.,
+              temperature, humidity, air pollution, wind speed and degree,
+              clouds percentage). You can also get a simple forecast, daily
+              forecast, historical weather data, or use a city search.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://openweathermap.org/guide"
+              role="button"
+              ><i class="bi bi-box-arrow-up-right"></i
+            ></a>
+          </div>
+
+          <div class="g-col-6 p-3 m-2">
+            <h3 class="display-6">About Tuwaiq</h3>
+            <p class="fs-6 text-start">
+              The Tuwaiq Programming embraces beginners through nurturing and
+              training them from scratch, giving professionals an opportunity to
+              reﬁne their programming skills, and opening doors to those who are
+              interested in learning new skills, building websites or designing
+              applications for their startup business ideas.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://bootcamp.sa/tuwaiq1000"
+              role="button"
+              ><i class="bi bi-box-arrow-up-right"></i
+            ></a>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <main class="container">
+        <h1 class="display-1 text-center" id="weatherSection">Weather</h1>
+        <form class="d-flex">
+          <input
+            id="cityInput"
+            class="form-control me-2"
+            type="search"
+            placeholder="City name"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" id="searchCity" type="submit">
+            Add
+          </button>
+        </form>
+
+        <div
+          class="container-fluid d-grid d-gridCards px-1 px-md-4 py-5 mx-auto"
+          id="weatherCards"
+        ></div>
+      </main>
+      <footer class="container mt-5">
+        <div class="row text-center">
+          <div class="col">
+            <a class="navbar-brand" href="#navbar"
+              ><img
+                height="30vh"
+                width="30vw"
+                src="images/wether logo.png"
+                alt="logo"
+            /></a>
+            <hr />
+            <p>© weather, Inc. 2021. We love our users!</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- important scripts -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="javascript.js"></script>
+  </body>
+</html>
+
+<!-- for footer      
+      <script>
+        function getyear() {
+          //  get year
+          document.getElementById("FooterTitle").innerHTML +=
+            new Date().getFullYear();
+        }
+      </script> -->
