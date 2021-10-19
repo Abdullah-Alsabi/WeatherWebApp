@@ -2,6 +2,8 @@ window.onload = function () {
   console.log("page is fully loaded");
   // localStorage.clear();
 
+defaultCitiesData = JSON.parse(localStorage.getItem("defaultCitiesData"));
+
   let defaultCitiesData = [
     "Riyadh",
     "London",
