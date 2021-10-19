@@ -14,7 +14,6 @@ window.onload = function () {
     "Manama",
   ];
 
-defaultCitiesData = JSON.parse(localStorage.getItem("defaultCitiesData"));
 
   // To return default cities turn the code below or if u want to delete and see the cities you add turn it off.
   // localStorage.setItem("defaultCitiesData", JSON.stringify(defaultCitiesData));
