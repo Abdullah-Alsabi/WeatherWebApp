@@ -2,6 +2,7 @@ window.onload = function () {
   console.log("page is fully loaded");
   // localStorage.clear();
 
+
   let defaultCitiesData = [
     "Riyadh",
     "London",
@@ -12,6 +13,7 @@ window.onload = function () {
     "Kuwait City",
     "Manama",
   ];
+
 
   // To return default cities turn the code below or if u want to delete and see the cities you add turn it off.
   // localStorage.setItem("defaultCitiesData", JSON.stringify(defaultCitiesData));
