@@ -14,7 +14,7 @@ window.onload = function () {
   ];
 
   // To return default cities turn the code below or if u want to delete and see the cities you add turn it off.
-  // localStorage.setItem("defaultCitiesData", JSON.stringify(defaultCitiesData));
+  localStorage.setItem("defaultCitiesData", JSON.stringify(defaultCitiesData));
 
   let key = "1918a46e259f1a69fceda2acae7f0ceb"; //Add City function.
   let cityFromUser = document.getElementById("cityInput");
