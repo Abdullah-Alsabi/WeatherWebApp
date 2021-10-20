@@ -17,6 +17,5 @@ Trello workspace below.
 
 <br>
 <hr/>
-
 Figma design below.
 <img src="/images/Figma.PNG">
