@@ -3,15 +3,24 @@ html,
 .main {
   padding: 0;
   margin: 0;
-  background-color: #ffffff;
+  background-color: #344648;
   background-image: url(/images/cardBackground.png);
   font-family: "Times New Roman", Times, serif;
 }
-
+#darkMod {
+  border-radius: 50%;
+  margin-top: 0.75vh !important;
+  background-color: #3446484f;
+  color: beige;
+}
 /* css for back to top. */
-
+.img-fluid {
+  height: 60vh !important;
+  max-height: 60vh;
+  width: 80vw !important;
+}
 nav {
-  border-bottom: 2px solid cornflowerblue;
+  border-bottom: 2px solid #101414;
 }
 .d-grid {
   grid-template-columns: 1fr 1fr;
@@ -26,7 +35,7 @@ nav {
   grid-auto-rows: 1fr 1fr 1fr;
 }
 .card {
-  background-color: rgba(100, 148, 237, 0.411);
+  background-color: #3446482d;
   background-size: cover;
   width: 600px;
   height: 350px;
@@ -35,8 +44,10 @@ nav {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.card:hover {
+  transform: scale(1.05);
+}
 .removeCity {
-  background-color: rgba(255, 0, 0, 0);
   border: none;
 }
 
@@ -66,16 +77,21 @@ nav {
     margin-right: 1em;
   }
 }
-
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .d-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  #weatherCards {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5vh;
+  }
+}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .d-grid {
     grid-template-columns: 1fr 1fr;
   }
   #weatherCards {
     grid-template-columns: 1fr 1fr;
-  }
-  .card {
-    margin-left: 22px;
   }
 }
 

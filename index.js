@@ -24,7 +24,7 @@ window.onload = function () {
 
   searchCityBtn.addEventListener("click", function () {
     let city = cityFromUser.value;
-    url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+    url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
     defaultCitiesData = JSON.parse(localStorage.getItem("defaultCitiesData"));
     if (!checkExistence(defaultCitiesData, city)) {
       defaultCitiesData.push(city);
@@ -45,7 +45,7 @@ window.onload = function () {
   defaultCitiesData = JSON.parse(localStorage.getItem("defaultCitiesData"));
   for (let i = 0; i < defaultCitiesData.length; i++) {
     const city = defaultCitiesData[i];
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
     getDataFromApi(url);
   }
 
@@ -80,7 +80,6 @@ window.onload = function () {
                 src="http://openweathermap.org/img/wn/${
                   j.weather[0].icon
                 }@2x.png"
-                class="img-fluid"
                 alt="${j.weather[0].description}"
               />
               <h5 class="card-title">${j.weather[0].main}</h5>
@@ -134,4 +133,49 @@ window.onload = function () {
         console.log(e);
       });
   }
+
+  let darkModBtn = document.getElementById("darkMod");
+
+  darkModBtn.addEventListener("click", function () {
+    const aboutUs = document.getElementById("aboutUs");
+    const weatherCardColor = document.getElementById("weatherCards");
+    const moonImg = document.getElementById("moon");
+    const sunImg = document.getElementById("sun");
+    const bodyBgColor = document.getElementById("mainDiv");
+    const navBgColor = document.getElementById("navbar");
+    const colorChangeH1 = document.getElementById("weatherSection");
+    const colorChangeP = document.getElementById("colorChange");
+    const colorChangeHr = document.getElementById("hrColor");
+    const headerImg = document.getElementById("headerImg");
+
+    if (aboutUs.style.color == "white") {
+      aboutUs.style.color = "black";
+      weatherCardColor.style.color = "black";
+      moonImg.style.display = "block";
+      sunImg.style.display = "none";
+      bodyBgColor.style.backgroundColor = "rgba(255, 255, 255, 0.842)";
+      navBgColor.classList.remove("navbar-dark");
+      navBgColor.classList.remove("bg-dark");
+      navBgColor.classList.add("navbar-light");
+      navBgColor.classList.add("bg-light");
+      colorChangeH1.style.color = "black";
+      colorChangeP.style.color = "black";
+      colorChangeHr.style.color = "black";
+      headerImg.src = "/images/header-final.jpg";
+    } else {
+      aboutUs.style.color = "white";
+      weatherCardColor.style.color = "white";
+      moonImg.style.display = "none";
+      sunImg.style.display = "block";
+      bodyBgColor.style.backgroundColor = "#344648";
+      navBgColor.classList.add("navbar-dark");
+      navBgColor.classList.add("bg-dark");
+      navBgColor.classList.remove("navbar-light");
+      navBgColor.classList.remove("bg-light");
+      colorChangeH1.style.color = "white";
+      colorChangeP.style.color = "white";
+      colorChangeHr.style.color = "white";
+      headerImg.src = "/images/darkmoodheader.png";
+    }
+  });
 };
