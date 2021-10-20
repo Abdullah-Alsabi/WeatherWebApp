@@ -2,7 +2,6 @@ window.onload = function () {
   console.log("page is fully loaded");
   // localStorage.clear();
 
-
   let defaultCitiesData = [
     "Riyadh",
     "London",
@@ -14,12 +13,10 @@ window.onload = function () {
     "Manama",
   ];
 
-
   // To return default cities turn the code below or if u want to delete and see the cities you add turn it off.
   // localStorage.setItem("defaultCitiesData", JSON.stringify(defaultCitiesData));
 
-  let key = "508b1b104edabafad4a2b1ca8ca011f3";
-  //Add City function.
+  let key = "1918a46e259f1a69fceda2acae7f0ceb"; //Add City function.
   let cityFromUser = document.getElementById("cityInput");
 
   let searchCityBtn = document.getElementById("searchCity");
@@ -66,7 +63,7 @@ window.onload = function () {
             let dt = new Date(j.dt * 1000); //timestamp * 1000
             weatherCards.innerHTML += `
             <div
-            class="card text-center g-col-3"
+            class="card"
             style="max-width: 18rem"
             id="card"
           >
@@ -91,7 +88,7 @@ window.onload = function () {
                 L:${Math.round(j.main.temp_min)}°
               </h5>
               <h5 class="card-title p-2">${dt.toDateString()}</h5>
-      
+           
               <button  class="removeCity  btn mt-3" type="button" name="${
                 j.name
               }">
@@ -150,7 +147,21 @@ window.onload = function () {
     const colorChangeHr = document.getElementById("hrColor");
     const headerImg = document.getElementById("headerImg");
 
-    if (aboutUs.style.color == "white") {
+    if (colorChangeH1.style.color == "black") {
+      aboutUs.style.color = "white";
+      weatherCardColor.style.color = "white";
+      moonImg.style.display = "none";
+      sunImg.style.display = "block";
+      bodyBgColor.style.backgroundColor = "#344648";
+      navBgColor.classList.add("navbar-dark");
+      navBgColor.classList.add("bg-dark");
+      navBgColor.classList.remove("navbar-light");
+      navBgColor.classList.remove("bg-light");
+      colorChangeH1.style.color = "white";
+      colorChangeP.style.color = "white";
+      colorChangeHr.style.color = "white";
+      headerImg.src = "/images/darkmoodheader2.png";
+    } else {
       aboutUs.style.color = "black";
       weatherCardColor.style.color = "black";
       moonImg.style.display = "block";
@@ -164,20 +175,63 @@ window.onload = function () {
       colorChangeP.style.color = "black";
       colorChangeHr.style.color = "black";
       headerImg.src = "/images/header-final.jpg";
-    } else {
-      aboutUs.style.color = "white";
-      weatherCardColor.style.color = "white";
-      moonImg.style.display = "none";
-      sunImg.style.display = "block";
-      bodyBgColor.style.backgroundColor = "#344648";
-      navBgColor.classList.add("navbar-dark");
-      navBgColor.classList.add("bg-dark");
-      navBgColor.classList.remove("navbar-light");
-      navBgColor.classList.remove("bg-light");
-      colorChangeH1.style.color = "white";
-      colorChangeP.style.color = "white";
-      colorChangeHr.style.color = "white";
-      headerImg.src = "/images/darkmoodheader.png";
     }
   });
 };
+
+// <button type="button" class="btn btn-primary moreDetils mt-3" data-bs-toggle="modal" data-bs-target="#modal0">
+// +
+// </button>
+// const modal = document.getElementById("modals");
+// defaultCitiesData = JSON.parse(
+//   localStorage.getItem("defaultCitiesData")
+// );
+// for (let i = 0; i < defaultCitiesData.length; i++) {
+//   const item = defaultCitiesData[i];
+
+//   modal.innerHTML += `
+//       <!-- Modal code -->
+// <div
+// class="modal fade"
+// id="Modal0"
+// tabindex="-1"
+// role="dialog"
+// aria-labelledby="exampleModalLabel"
+// aria-hidden="true"
+// >
+// <!-- Modal content -->
+
+// <div class="modal-dialog" role="document">
+// <div class="modal-content">
+// <div class="modal-header">
+// <h5 class="modal-title" id="headerForModal${i}">${item.j.name}</h5>
+// <button
+// type="button"
+// class="close"
+// data-dismiss="modal"
+// aria-label="Close"
+// >
+// <span aria-hidden="true">&times;</span>
+// </button>
+// </div>
+// <div class="modal-body">
+// <ul id=ul${i} type="square">
+
+// </ul>
+// <h6 class="text-center mt-3">temp: ${Math.round(
+// item.j.main.temp
+// )}$</h6>
+
+// </div>
+// <div class="modal-footer">
+
+// <button type="button" class="btn btn-danger" data-dismiss="modal">
+// Close
+// </button>
+// </div>
+// </div>
+// </div>
+// </div>
+
+// `;
+// }
