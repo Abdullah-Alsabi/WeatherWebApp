@@ -29,13 +29,15 @@ Some of the tools I used:
 <li>Also I used Figma to design the application.</li>
 <li>And to track the progress and tasks I used Trllo.</li>
 </ul>
-link to my trllo workspace: https://trello.com/b/QDDLId3Q/weather-web-app  <br>
-link to my figma workspace: https://www.figma.com/proto/YqPDJPbONJQCvdWzIuHY8G/Wireframing-in-Figma?node-id=0%3A817&scaling=min-zoom&page-id=0%3A1
 
 <h2> Obstacles:</h2>
 One of the proplem I faced is to find the API that fits my requirement, and after a lot of searching I found the OpenWeatherMap API which is an online service, owned by OpenWeather Ltd, that provides global weather data via API, including current weather data, forecasts, nowcasts and historical weather data for any geographical location.
  <br>
-Here is link to my application:https://abdullah-alsabi.github.io/WeatherWebApp/ <br>
+ 
+<h2> Links:</h2>
+Here is link to my application:https://resonsive-weather-app.netlify.app <br>
 feal free to contact me at: AbdullahB.alsabi@gmail.com
+link to my trllo workspace: https://trello.com/b/QDDLId3Q/weather-web-app  <br>
+link to my figma workspace: https://www.figma.com/proto/YqPDJPbONJQCvdWzIuHY8G/Wireframing-in-Figma?node-id=0%3A817&scaling=min-zoom&page-id=0%3A1
 
 Thanks For Your Time.
